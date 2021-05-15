@@ -1,0 +1,87 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.panel {
+    height: 100vh;
+    width: 100%;
+    background-position: left center;
+    transition: 1s ease-in;
+    position: relative;
+}
+
+.panel.play .overlay {
+    text-align: center;
+    height: 100vh;
+    background: #5754EC;
+    opacity: 0.7;
+    margin: 0;
+    padding: 0;
+}
+
+.panel.xbox .overlay {
+    text-align: center;
+    height: 100vh;
+    background: #333333;
+    opacity: 0.7;
+    margin: 0;
+    padding: 0;
+}
+
+.panel .content {
+    position: absolute;
+    top: 25%;
+    text-align: center;
+    left: 25%;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    color: white;
+    font-size: 62px;
+    white-space: nowrap;
+}
+
+button {
+    border: 3px solid white;
+    height: 70px;
+    width: 250px;
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+}
+
+.panel.play {
+    background: url(images/PlayStation-5-Will-Have-a-Completely-Redesigned-User-Interface.jpeg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: cover;
+}
+.panel.play button:hover{
+    border-color:  #5754EC;
+ background-color:  #5754EC;
+}
+.panel.xbox button:hover{
+    border-color:#3D7B1F ;
+ background-color:  #3D7B1F;
+}
+
+.panel.xbox {
+    background: url(images/xbox.jpeg);
+
+}
+
+.panel.play.show {
+    width: 280%;
+}
+
+.panel.xbox.show {
+    width: 280%;
+}

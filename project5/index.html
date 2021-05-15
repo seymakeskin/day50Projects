@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Project 5</title>
+</head>
+
+<body>
+    <div class="image"></div>
+    <div class="counter"> </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+
+    <script>
+        let count = 1;
+        let image = $('.image');
+        var sayi=8; 
+        var decrement = hesapla(sayi);
+        var opacity = 1;
+        var opacityDecrement = hesapla(opacity);
+        
+        $(document).ready(function () {
+            counter = setInterval(function () {
+                if (count <= 100) {
+                    $(".counter").html(count + "%").css("opacity",opacity);
+                    image.css("-webkit-filter", "blur("+sayi+"px)"); 
+                    count++;
+                    sayi=sayi-decrement;
+                    opacity =  opacity- opacityDecrement;
+                }else{
+                    clearInterval(counter);
+                }
+            }, 30);
+        });
+        function hesapla(sayi){
+            return sayi/100;
+        }
+      
+       
+
+    </script>
+</body>
+
+</html>

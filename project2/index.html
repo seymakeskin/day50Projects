@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Project 2</title> 
+</head>
+
+<body>
+    <div class="container">
+        <div class="step-container">
+            <div class="step" style="width: 0%;" id="step"></div>
+            <div class="number active">
+                1
+            </div>
+
+            <div class="number">
+                2
+            </div>
+            <div class="number ">
+                3
+            </div>
+
+            <div class="number">
+                4
+            </div>
+        </div>
+        <div class="buttons" style="text-align: center;">
+            <button id="prev" disabled>
+                Prev
+            </button>
+            <button id="next">
+                Next
+            </button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+
+    <script>
+        let step = 1;
+        let stepWidth= $('#step')
+        let numberElements = $('.number');
+        let maxStep = numberElements.length;
+        let percentRate = 100 / (maxStep - 1);
+       
+        let prev = $('#prev');
+        let next = $('#next');
+        prev.click(function () {
+            step--
+            numberElements.eq(step).removeClass('active');
+            stepWidth.css({'width': percentRate  * (step -1 ) + '%' });
+            if (step < 2) {
+                prev.attr('disabled', true)
+            }
+            next.removeAttr('disabled')
+           
+        })
+        next.click(function () {
+            step++;
+            numberElements.eq(step - 1).addClass('active');
+            stepWidth.css({'width': percentRate  * (step  -1 ) + '%' });
+            if (step == maxStep) {
+                next.attr("disabled", true);
+                
+            }
+            prev.removeAttr('disabled')
+            
+
+        })
+
+
+    </script>
+
+
+
+</body>
+
+</html>

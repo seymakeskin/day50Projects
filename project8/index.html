@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Project 8</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Please Login</h1>
+        <form action="/action_page.php">
+            <div class="form-control">
+                <input type="text" id="mail" name="mail">
+                <label for="mail" class="control-label">Email</label>
+            </div>
+
+            <div class="form-control">
+                <input type="password" id="password">
+                <label for="password" class="control-label">Password</label>
+            </div>
+    
+        </form>
+
+          <div style="position: relative;">
+            <button>Login</button> <br> <br>
+            <span>Don't have an account?<a href="#"> Register</a></span>
+            
+          </div>
+       
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous">
+    </script>
+    
+    <script>  
+  
+    let label = $('.control-label');
+    label.each(function(index){
+        let labelDiv = $(this);
+        let word = $( this ).text();
+        let split= word.split("").map((element,id)=>'<span style="transition-delay: '+id*50+'ms;" >'+element+'</span>').join('');
+        labelDiv.html(split);
+
+        //labelDiv.append("<span style='transition-delay: "+i*50+"ms;'>"+element+"</span>");
+ 
+        /*
+        $(split).each(function(i,element){
+           
+            //console.log(i,element) 
+        
+           //labelDiv.append(`<span style="transition-delay: ${i*50}ms">${element}</span>`)
+        
+        })
+        */
+    
+        
+    })
+    
+
+
+      
+    
+    
+    </script>
+
+</body>
+
+</html>
