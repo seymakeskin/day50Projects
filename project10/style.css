@@ -1,0 +1,21 @@
+body{
+    background-color: #686DE0;
+    font-family: 'Roboto', 'sans-serif';
+    height: 100vh;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    background-color: white;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    width: 400px;
+    
+}
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Project 10</title>
+</head>
+
+<body>
+    <div class="content">
+        <h3 id="deneme">Don't Laugh Challenge</h3>
+        <p id="joke"> </p>
+        <button id="change">
+            Get Another Joke
+        </button>
+
+    </div>
+
+    <script>
+        sakaGetir();
+       function sakaGetir(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var response = JSON.parse(this.response);
+                    //console.log(this.responseText);
+                    let fallback = response.attachments[0].fallback;
+                    // let head = document.getElementsByTagName('h3')[0].innerText = fallback;
+                    let pg = document.getElementById('joke').innerText = fallback;
+                    //var text = document.createTextNode(fallback);
+                }
+            };
+            xhttp.open("GET", "https://icanhazdadjoke.com/slack", true);
+            xhttp.send();
+        }
+        
+        var btn = document.getElementById('change');
+        btn.addEventListener("click",function(){
+            sakaGetir();
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
