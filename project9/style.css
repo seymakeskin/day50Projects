@@ -1,0 +1,25 @@
+body{
+    background-color: #A164E0;
+    
+}
+
+#buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 80%;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+.btn{
+    cursor: pointer;
+    background-color: #6C38A0;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 20px 40px;
+    font-size: 23px;
+    
+}
