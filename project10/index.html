@@ -13,7 +13,7 @@
 
 <body>
     <div class="content">
-        <h3 id="deneme">Don't Laugh Challenge</h3>
+        <h3>Don't Laugh Challenge</h3>
         <p id="joke"> </p>
         <button id="change">
             Get Another Joke
@@ -29,7 +29,6 @@
 
         function ajax(response) {
             $.get("https://icanhazdadjoke.com/slack", function (data) {
-                $(".result").html(data);
                 let joke = data.attachments[0].fallback;
                 $('#joke').html(joke)
             });

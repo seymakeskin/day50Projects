@@ -15,8 +15,14 @@ body{
     border-radius: 5px;
     padding: 30px;
     text-align: center;
-    width: 600px;
+    width: 700px;
     
+}
+
+h3{
+    color: #808080;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 p{
