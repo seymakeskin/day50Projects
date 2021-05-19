@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Project 11</title>
+</head>
+
+<body>
+  <div id="container">
+      <div class="key">
+        Press any key to get the keyCode
+      </div>
+
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous">
+    </script>
+  <script>
+    const container = $('#container');
+    $(window).keydown(function (event) {
+      var code = event.keyCode;
+      var key = event.key;
+      var eventCode = event.code;
+      if(key ===" "){
+        key = "space";
+      }
+      container.html(
+        "<div class='key'> <span>event.key </span>"+key+"</div> <div class='key'><span>event.keyCode </span>"+code+"</div> <div class='key'><span>event.code </span>"+eventCode+"</div>"
+       
+      )
+      
+     
+
+    });
+    //document.addEventListener('keypress', logKey);
+
+    //function logKey(e) {
+    //  log.textContent += ` ${e.code}`;
+    //  console.log(e)
+    //}
+  </script>
+
+</body>
+
+</html>
