@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Project 12</title>
+</head>
+
+<body>
+    <h1>Frequently Asked Questions</h1>
+    <div class="container">
+        <div class="question active">
+            <div class="faq-text">
+                <h3>Why shouldn't we trust atoms?</h3>
+                <p>
+                    They make up everything
+                </p>
+            </div>
+            <button>
+                <i class="fas fa-chevron-down open"></i>
+                <i class="fas fa-times-circle close"></i>
+            </button>
+
+
+        </div>
+        <div class="question">
+            <div class="faq-text">
+                <h3>What do you call someone with no body and no nose?</h3>
+                <p>
+                    Nobody knows.
+                </p>
+            </div>
+            <button>
+                <i class="fas fa-chevron-down open"></i>
+                <i class="fas fa-times-circle close"></i>
+            </button>
+
+        </div>
+        <div class="question">
+            <div class="faq-text">
+                <h3>What's the object-oriented way to become wealthy?</h3>
+                <p>
+                    Inheritance.
+                </p>
+
+            </div>
+            <button>
+                <i class="fas fa-chevron-down open"></i>
+                <i class="fas fa-times-circle close"></i>
+            </button>
+
+
+        </div>
+        <div class="question">
+            <div class="faq-text">
+
+                <h3>How many tickles does it take to tickle an octopus?</h3>
+                <p>
+                    Ten-tickles!
+                </p>
+            </div>
+            <button>
+                <i class="fas fa-chevron-down open"></i>
+                <i class="fas fa-times-circle close"></i>
+            </button>
+        </div>
+        <div class="question">
+            <div class="faq-text">
+
+                <h3>What is: 1 + 1?</h3>
+                <p>
+                    Depends on who are you asking.
+                </p>
+            </div>
+            <button>
+                <i class="fas fa-chevron-down open"></i>
+                <i class="fas fa-times-circle close"></i>
+            </button>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous">
+        </script>
+    <script>
+        const button = $("button");
+        const containers = $(".question");
+        button.click(function (event) {
+         $( event.target ).closest( containers ).toggleClass( "active" );
+        })
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
