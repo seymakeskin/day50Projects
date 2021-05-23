@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #2B88F0;
+    font-family: "Roboto";
+}
+.container{
+    max-width: 500px;
+}
+textarea{
+    width: 500px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+h3{
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    padding: 10px;
+}
+#tag{
+    display: flex;
+}
+.tag{
+    background-color: #F09333;
+    
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    display: inline-block;
+    margin:0px 5px 5px 0px;
+
+}
+
+.darkbg{
+    background-color: darkblue;
+}
