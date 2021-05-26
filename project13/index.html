@@ -37,27 +37,29 @@
         //}
         const area = $('textarea')
         const tags = $('#tags')
-       
+      
         area.keydown(function () {
             let value = area.val();
-            var split = value.split(",").map((index, element) => '<span class="tag">' + index + '</span>') ;
+            var split = value.split(",").filter(tag => tag.trim() !== '').map((index, element) => '<span class="tag">' + index + '</span>');
             tags.html(split)
-        })
-        area.keypress(function (event) {
-            var keycode = (event.keyCode ? event.keyCode : event.which);
-            if (keycode == '13') {  
-               setInterval(function(){
-                var tagg= $('.tag');
-                var sonuc = tagg[Math.floor(tagg.length * Math.random())];
-                $(sonuc).toggleClass('darkbg');
-
-                }, 300);
-               
-            }
         });
 
+        area.keypress(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                const times = 30
+                var interval = setInterval(function myStopFunction() {
+                    var tagg = $('.tag');
+                    var sonuc= tagg[Math.floor(tagg.length * Math.random())];
+                    tagg.removeClass('darkbg')
+                    $(sonuc).addClass('darkbg');
+                    setTimeout(function () {
+                      clearInterval(interval)
+                    }, 2000);
+                }, 200);
+            }
 
-
+        });
 
     </script>
 </body>
