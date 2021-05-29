@@ -1,0 +1,91 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient( to bottom, #eafbff 0%, #eafbff 50%, #5290f9 50%, #5290f9 100% );
+    overflow: hidden;
+    font-family: "roboto";
+}
+
+.nav{
+    background-color: white;
+    display: flex;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    width: 30px;
+    transition: 0.8s ease-in;
+}
+.nav ul{
+    list-style-type: none;
+    display: flex;
+    padding: 0px;
+    opacity: 0;
+    width: 0px;
+    transition: 0.8s ease-in;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    margin-right: 10px;
+}
+
+button{
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+    height: auto;
+    /* margin-top: 3px; */
+    margin-bottom: 8px;
+    display: block;
+    z-index: 1;
+
+}
+
+
+.line{
+    background-color: #5290F9;
+    width: 20px;
+    height: 2px;
+    transition: 0.8s ease-in;    
+}
+
+.line2{
+    margin-top: 10px;
+}
+
+
+.nav.active{
+ width: 250px;
+}
+
+.nav.active ul li{
+    transform: rotate(360deg);
+}
+
+
+
+.nav.active ul{
+   opacity: 1;
+   width: 100%;
+}
+
+
+.nav.active button{
+    margin-bottom: 0px;
+}
+
+
+.nav.active .line1{
+    transform: rotate(-770deg) translateY(2.5px);
+}
+.nav.active .line2{
+    margin-top: 0px;
+    transform: rotate(765deg) translateY(-2.5px);
+}
+
+
