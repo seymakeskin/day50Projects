@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Project16</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Drink Water</h1>
+        <h3>Goal: 2 Liters</h3>
+        <div class="water-container">
+            <div class="remained">
+                <span id="litre"></span>
+
+                <small>Remained</small>
+            </div>
+            <div class="water" id="water">
+
+            </div>
+
+
+        </div>
+        <h4>Select how many glasses of water that you have drank</h4>
+        <div class="glasses-container">
+            <div class="glass">250 ml</div>
+            <div class="glass">250 ml</div>
+            <div class="glass">250 ml</div>
+            <div class="glass">250 ml</div>
+            <div class="glass">250 ml</div>
+            <div class="glass">250 ml</div>
+            <div class="glass">250 ml</div>
+            <div class="glass">250 ml</div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous">
+        </script>
+    <script>
+        let glass = $('.glass');
+        const water = $('#water');
+        const litre = $('#litre');
+        var litrehtml = litre.html(2 + ' L');
+
+        glass.map((index, element) => {
+            $(element).click(function () {
+                var dolacakIndex = index;
+                console.log('normal index',index);
+                if ($(element).hasClass('press')) {
+                   // var lastIndex = index - 1;
+                  
+                    if(!$(glass[index+1]).hasClass('press')){
+                        dolacakIndex = index-1;
+                    }
+                }
+
+                var glasses = $('.glass:lt(' + (dolacakIndex + 1) + ')');
+                glass.removeClass('press')
+                glasses.addClass('press');
+                var html = water.css({ height: glasses.length * 12.5 + '%' });
+                water.html(glasses.length * 12.5 + '%')
+                litrehtml = litre.html(2 - glasses.length * 0.25 + 'L');
+
+            })
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>
