@@ -17,14 +17,14 @@ body{
     border-bottom-right-radius: 30px;
     position: relative;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .water{
-    position: absolute;
-    bottom:0;
     border-bottom-left-radius: 26px;
     border-bottom-right-radius: 26px;
-    z-index: 999;
     height: 0px;
     width: 100%;
     background-color:#6AB3F8;
@@ -41,6 +41,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1;
     
 }
 
@@ -79,6 +80,8 @@ body{
     display: flex;
     flex-direction: column;
     font-weight: 300;
+    flex: 1;
+    height: 0;
     
 }
 .remained span{

@@ -16,7 +16,7 @@
         <h1>Drink Water</h1>
         <h3>Goal: 2 Liters</h3>
         <div class="water-container">
-            <div class="remained">
+            <div class="remained" id="remained">
                 <span id="litre"></span>
 
                 <small>Remained</small>
@@ -48,24 +48,34 @@
         const water = $('#water');
         const litre = $('#litre');
         var litrehtml = litre.html(2 + ' L');
-
+        const rem = $('#remained') 
+      
         glass.map((index, element) => {
             $(element).click(function () {
                 var dolacakIndex = index;
-                console.log('normal index',index);
                 if ($(element).hasClass('press')) {
-                   // var lastIndex = index - 1;
-                  
+                   // var lastIndex = index - 1;             
                     if(!$(glass[index+1]).hasClass('press')){
                         dolacakIndex = index-1;
                     }
                 }
-
                 var glasses = $('.glass:lt(' + (dolacakIndex + 1) + ')');
                 glass.removeClass('press')
                 glasses.addClass('press');
-                var html = water.css({ height: glasses.length * 12.5 + '%' });
-                water.html(glasses.length * 12.5 + '%')
+                var yuzdelik = glasses.length * 12.5 + '%';
+                var html = water.css({ height:yuzdelik });
+                if(glasses.length>0){
+                    water.html(yuzdelik)
+                }else{
+                    water.html("")
+                }
+                if(yuzdelik=="100%"){
+                   rem.css('visibility', 'hidden');
+                }else{
+                  rem.css('visibility', 'visible');
+                }
+                
+                console.log(html.text())
                 litrehtml = litre.html(2 - glasses.length * 0.25 + 'L');
 
             })
